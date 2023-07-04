@@ -44,6 +44,7 @@ const inclusive = [
   "ArrowRight",
   "ArrowUp",
   "ArrowDown",
+  "Enter"
 ];
 
 typingZone.addEventListener("keydown", (e) => {
