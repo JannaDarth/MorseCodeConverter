@@ -36,9 +36,22 @@ const morseAlphabet = {
   ":": "---...,",
 };
 const keys = Object.keys(morseAlphabet);
+const inclusive = [
+  "Backspace",
+  "Home",
+  "End",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowUp",
+  "ArrowDown",
+];
 
 typingZone.addEventListener("keydown", (e) => {
-  if (!keys.includes(e.key.toUpperCase()) && e.key != "Backspace") {
+  console.log(e);
+  if (
+    !keys.includes(e.key.toUpperCase()) &&
+    inclusive.includes(e.key.toUpperCase())
+  ) {
     e.preventDefault();
     console.log(`This convertor doesn't accept : ${e.key} symbol`);
   }
