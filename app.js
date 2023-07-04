@@ -48,10 +48,7 @@ const inclusive = [
 
 typingZone.addEventListener("keydown", (e) => {
   console.log(e);
-  if (
-    !keys.includes(e.key.toUpperCase()) &&
-    inclusive.includes(e.key.toUpperCase())
-  ) {
+  if (!keys.includes(e.key.toUpperCase()) && !inclusive.includes(e.key)) {
     e.preventDefault();
     console.log(`This convertor doesn't accept : ${e.key} symbol`);
   }
