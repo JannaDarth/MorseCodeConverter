@@ -23,6 +23,7 @@ body {
 }
 
 .recieving {
+  position: relative;
   margin-top: 15%;
 }
 
@@ -75,4 +76,27 @@ textarea {
   padding: 25px;
   font-size: 1.5rem;
   border-radius: 20px;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  right: 25%;
+  top: -20%;
+  background-color: #0e2441;
+  font-size: 1.2rem;
+  padding: 3px;
+  border-radius: 5px;
+  z-index: 0;
+}
+.tooltip::after {
+  content: " ";
+  width: 15px;
+  height: 15px;
+  background-color: #0e2441;
+  transform: rotate(45deg);
+  right: 50%;
+  bottom: -20%;
+  position: absolute;
+  z-index: -1;
 }

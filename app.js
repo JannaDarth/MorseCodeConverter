@@ -1,6 +1,7 @@
 const typingZone = document.querySelector("textarea");
 const answerZone = document.querySelector(".morsed");
 const outcome = document.querySelector(".outcome");
+const tooltip = document.querySelector(".tooltip");
 const morseAlphabet = {
   A: ".-",
   B: "-...",
@@ -44,19 +45,21 @@ const inclusive = [
   "ArrowRight",
   "ArrowUp",
   "ArrowDown",
-  "Enter"
+  "Enter",
+  "Shift",
+  "Alt",
 ];
 
 typingZone.addEventListener("keydown", (e) => {
-  console.log(e);
   if (!keys.includes(e.key.toUpperCase()) && !inclusive.includes(e.key)) {
+    tooltip.style.display = "inherit";
     e.preventDefault();
-    console.log(`This convertor doesn't accept : ${e.key} symbol`);
   }
 });
 
 typingZone.addEventListener("input", (e) => {
   const input = typingZone.value.toUpperCase();
+  tooltip.style.display = "none";
   outcome.style.display = input.length ? "inherit" : "none";
   if (e.inputType == "deleteContentBackward") {
     deleteText(input);
